@@ -11,10 +11,17 @@ uv sync
 python main.py
 ```
 
+**Note:** Full functionality requires LLM API keys. Set `GROQ_API_KEY` and `MISTRAL_AI_API_KEY` (or the keys expected by the agents) as environment variables before running. Without them the agents will fail at runtime.
+
 ## Structure
 - `agents.py` – agent definitions
 - `pipeline.py` – orchestration
 - `prompts.py` – system prompts
 - `tools.py` – tools for data access
 
-Last updated: 2026-09-19
+## Tips
+- Run from the repository root so relative paths to sample PDFs resolve correctly.
+- Never commit API keys; prefer a `.env` file (add it to `.gitignore`) and load with `python-dotenv`.
+- The sample 10-K PDF is included for local testing of document extraction.
+
+Last updated: 2026-11-24
